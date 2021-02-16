@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.16.0.final using JasperReports Library version 6.16.0-48579d909b7943b64690c65c71e07e0b80981928  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Blank_A4" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="88e2b691-8d1f-4718-8f39-0c17289d85d7">
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="New Data Adapter "/>
+	<queryString language="SQL">
+		<![CDATA[SELECT title,description, rental_duration, rating FROM film]]>
+	</queryString>
+	<field name="title" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="title"/>
+		<property name="com.jaspersoft.studio.field.label" value="title"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="film"/>
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="description" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="description"/>
+		<property name="com.jaspersoft.studio.field.label" value="description"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="film"/>
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="rental_duration" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.name" value="rental_duration"/>
+		<property name="com.jaspersoft.studio.field.label" value="rental_duration"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="film"/>
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="rating" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="rating"/>
+		<property name="com.jaspersoft.studio.field.label" value="rating"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="film"/>
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch">
+			<staticText>
+				<reportElement mode="Opaque" x="0" y="0" width="570" height="79" forecolor="#FFFF99" backcolor="#6600FF" uuid="4076560e-7a61-4065-aedc-b50fbe6be769"/>
+				<textElement textAlignment="Center" verticalAlignment="Bottom">
+					<font size="24" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Movies Report]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="35" splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="26" splitType="Stretch">
+			<staticText>
+				<reportElement x="260" y="0" width="100" height="26" uuid="9f15ab83-19a0-4fcc-94f9-ccf251c9598b">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="c46f8859-ea95-4a30-a3db-bb5c39be6355"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Bottom"/>
+				<text><![CDATA[rental_duration]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="140" y="0" width="100" height="26" uuid="8e6ee881-3073-4c40-824e-10fd716b186b">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="b1309fd4-f0bf-4e79-a20d-b6f834d8a634"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Bottom"/>
+				<text><![CDATA[description]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="30" y="0" width="100" height="26" uuid="a6eb3ce5-b633-41a4-9043-1f7129003e4f">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="21702ce3-7607-4ad5-b4c9-86cc50a474b7"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Bottom"/>
+				<text><![CDATA[title]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="390" y="0" width="100" height="26" uuid="1fe717d8-e995-44f2-9db1-f169c4988d9d">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="53e2ea45-9d2d-4755-a07e-edeb2396d06e"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Bottom"/>
+				<text><![CDATA[rating]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="71" splitType="Stretch">
+			<textField>
+				<reportElement x="260" y="40" width="100" height="30" uuid="52f1f8b7-e2a4-4898-8fd8-9b7a96a7728f">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="c46f8859-ea95-4a30-a3db-bb5c39be6355"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{rental_duration}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="140" y="40" width="100" height="30" uuid="94076ae8-35ed-4ced-a359-fd60240a4bda">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="b1309fd4-f0bf-4e79-a20d-b6f834d8a634"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{description}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="30" y="40" width="100" height="30" uuid="bbc9ae66-5fad-4233-b115-c3958f49b0fe">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="21702ce3-7607-4ad5-b4c9-86cc50a474b7"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{title}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="390" y="40" width="100" height="30" uuid="0f596c8c-e92e-4fa9-90de-2901191c1a37">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="53e2ea45-9d2d-4755-a07e-edeb2396d06e"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{rating}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+</jasperReport>
