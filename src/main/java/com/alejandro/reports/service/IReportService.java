@@ -4,5 +4,6 @@ import net.sf.jasperreports.engine.JasperPrint;
 
 public interface IReportService {
 
-	public JasperPrint makeReport();
+	JasperPrint makeReport();
+	JasperPrint makeReportFilter(Object filter);
 }

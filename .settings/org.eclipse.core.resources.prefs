@@ -1,2 +1,4 @@
 eclipse.preferences.version=1
-encoding//src/main/resources/movies-simple-report.jrxml=UTF-8
+encoding//src/main/resources/reports/movies-simple-report.jrxml=UTF-8
+encoding//src/main/resources/reports/moviesByRating.jrxml.jrxml=UTF-8
+encoding//src/main/resources/reports/moviesFilterByRating.jrxml=UTF-8

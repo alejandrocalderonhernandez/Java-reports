@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.16.0.final using JasperReports Library version 6.16.0-48579d909b7943b64690c65c71e07e0b80981928  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="moviesFilterByRating" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="cc00f826-bd6d-4787-8176-7c17db74b752">
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="New Data Adapter "/>
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<parameter name="rating" class="java.lang.String">
+		<parameterDescription><![CDATA[where raiting is equal to]]></parameterDescription>
+	</parameter>
+	<parameter name="date" class="java.lang.String">
+		<parameterDescription><![CDATA[The date now for the report]]></parameterDescription>
+	</parameter>
+	<queryString>
+		<![CDATA[SELECT title, description, length, special_features FROM film WHERE rating = $P{rating}]]>
+	</queryString>
+	<field name="title" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="title"/>
+		<property name="com.jaspersoft.studio.field.label" value="title"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="film"/>
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="description" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="description"/>
+		<property name="com.jaspersoft.studio.field.label" value="description"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="film"/>
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="length" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.name" value="length"/>
+		<property name="com.jaspersoft.studio.field.label" value="length"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="film"/>
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="special_features" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="special_features"/>
+		<property name="com.jaspersoft.studio.field.label" value="special_features"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="film"/>
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch">
+			<textField evaluationTime="Report">
+				<reportElement mode="Opaque" x="-20" y="0" width="595" height="79" forecolor="#FFFF00" backcolor="#990099" uuid="08f6dc63-51cb-464f-b5f3-31b30aeb158f"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="22"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Movies with rating: " + $P{rating}]]></textFieldExpression>
+			</textField>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="47" splitType="Stretch">
+			<textField>
+				<reportElement x="430" y="10" width="120" height="30" uuid="bacdc6df-4a5b-4c02-9a26-0cb1ee0e8901"/>
+				<textElement textAlignment="Right"/>
+				<textFieldExpression><![CDATA[$P{date}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="61" splitType="Stretch">
+			<staticText>
+				<reportElement x="9" y="0" width="100" height="30" uuid="162d7110-4568-4197-9e99-ad41e69d86d1">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="5960753e-0452-4e33-8f68-af4050329559"/>
+				</reportElement>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[title]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="130" y="0" width="70" height="30" uuid="d336dc74-210d-4616-b2b5-17064b882793">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="bfa6f8ca-7a85-4a73-aa9e-ee689e21b724"/>
+				</reportElement>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[length]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="220" y="0" width="120" height="30" uuid="f9f457d7-5e88-48d4-84ac-7632ae6332e8">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="2df07cbf-c207-42b5-bd4c-1d242ad4a373"/>
+				</reportElement>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[special_features]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="360" y="0" width="190" height="30" uuid="9edb8638-8cc0-4e6e-94ce-3898a9e1f84b">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="bb37658b-ce90-44f9-9e04-c55df12969db"/>
+				</reportElement>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[description]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="95" splitType="Stretch">
+			<textField>
+				<reportElement x="10" y="10" width="100" height="30" uuid="e80cf015-73b2-456e-b504-0ff7c652c1b7">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="5960753e-0452-4e33-8f68-af4050329559"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Top"/>
+				<textFieldExpression><![CDATA[$F{title}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="136" y="10" width="64" height="30" uuid="78993546-dda7-447f-b43f-8f48d0d0d884">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="bfa6f8ca-7a85-4a73-aa9e-ee689e21b724"/>
+				</reportElement>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{length}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="220" y="10" width="120" height="30" uuid="6b2335fb-08fd-4149-b3be-59ea92fc1e13">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="2df07cbf-c207-42b5-bd4c-1d242ad4a373"/>
+				</reportElement>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{special_features}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="360" y="10" width="190" height="30" uuid="d55c3167-06c1-421b-9633-e8f2fb926a32">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="bb37658b-ce90-44f9-9e04-c55df12969db"/>
+				</reportElement>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{description}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<pageFooter>
+		<band height="22" splitType="Stretch">
+			<textField>
+				<reportElement x="470" y="0" width="100" height="20" uuid="5bee34ef-a524-47f3-b35b-2a0c58855922"/>
+				<textFieldExpression><![CDATA[$V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+</jasperReport>

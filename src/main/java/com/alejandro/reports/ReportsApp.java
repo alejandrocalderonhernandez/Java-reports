@@ -13,8 +13,10 @@ public class ReportsApp {
 
 	private static final String SAVE_PATH = "/home/alejandro/Descargas/my-report.pdf";
 	
+	
 	public static void main(String[] args) throws FileNotFoundException, JRException {
 		IReportService service = new ReportService();
-		JasperExportManager.exportReportToPdfFile(service.makeReport(), SAVE_PATH);
+		//JasperExportManager.exportReportToPdfFile(service.makeReport(), SAVE_PATH);
+		JasperExportManager.exportReportToPdfFile(service.makeReportFilter("PG-13"), SAVE_PATH);
 	}
 }
