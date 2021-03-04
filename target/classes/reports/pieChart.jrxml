@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.16.0.final using JasperReports Library version 6.16.0-48579d909b7943b64690c65c71e07e0b80981928  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="pieChart" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="5639ee41-62ac-43cf-9cdb-1640a4e856ee">
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="New Data Adapter "/>
+	<queryString language="SQL">
+		<![CDATA[SELECT rating, COUNT(*) total FROM film GROUP BY rating]]>
+	</queryString>
+	<field name="total" class="java.lang.Long">
+		<property name="com.jaspersoft.studio.field.name" value="total"/>
+		<property name="com.jaspersoft.studio.field.label" value="total"/>
+	</field>
+	<field name="rating" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="rating"/>
+		<property name="com.jaspersoft.studio.field.label" value="rating"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="film"/>
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<group name="total">
+		<groupExpression><![CDATA[$F{total}]]></groupExpression>
+	</group>
+	<group name="rating">
+		<groupExpression><![CDATA[$F{rating}]]></groupExpression>
+	</group>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="65" splitType="Stretch">
+			<staticText>
+				<reportElement mode="Opaque" x="5" y="0" width="550" height="65" forecolor="#3300FF" backcolor="#FFCC00" uuid="8e75d957-3f76-4344-8462-f82a62ae12c8"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="33"/>
+				</textElement>
+				<text><![CDATA[Movies]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageFooter>
+		<band splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="235" splitType="Stretch">
+			<pieChart>
+				<chart evaluationTime="Report">
+					<reportElement x="5" y="15" width="550" height="220" uuid="def8b735-5134-44d6-a660-790580d5cd86"/>
+					<chartTitle/>
+					<chartSubtitle/>
+					<chartLegend/>
+				</chart>
+				<pieDataset>
+					<dataset resetType="Report"/>
+					<keyExpression><![CDATA[$F{rating}]]></keyExpression>
+					<valueExpression><![CDATA[$F{total}]]></valueExpression>
+					<labelExpression><![CDATA[$F{total}+""]]></labelExpression>
+				</pieDataset>
+				<piePlot>
+					<plot/>
+					<itemLabel/>
+				</piePlot>
+			</pieChart>
+		</band>
+	</summary>
+</jasperReport>

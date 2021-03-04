@@ -6,4 +6,6 @@ public interface IReportService {
 
 	JasperPrint makeReport();
 	JasperPrint makeReportFilter(Object filter);
+	JasperPrint makeReportOwnConnection();
+	JasperPrint makeReportJoin();
 }

@@ -53,8 +53,8 @@
 	<pageHeader>
 		<band height="47" splitType="Stretch">
 			<textField>
-				<reportElement x="430" y="10" width="120" height="30" uuid="bacdc6df-4a5b-4c02-9a26-0cb1ee0e8901"/>
-				<textElement textAlignment="Right"/>
+				<reportElement x="0" y="10" width="120" height="30" uuid="bacdc6df-4a5b-4c02-9a26-0cb1ee0e8901"/>
+				<textElement textAlignment="Left"/>
 				<textFieldExpression><![CDATA[$P{date}]]></textFieldExpression>
 			</textField>
 		</band>
